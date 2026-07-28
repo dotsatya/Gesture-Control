@@ -1,142 +1,88 @@
-# Gesture Control Presenter 🎮🖐️
+# Gesture Control Presenter 🖐️
 
-Control your Google Slides presentations using hand gestures through your laptop camera using Computer Vision and AI.
+Control Google Slides with hand gestures using your laptop camera. This project combines Computer Vision and AI to detect simple hand poses and trigger presentation actions in real time.
 
-This project uses:
+## ✨ Features
 
-* OpenCV
-* MediaPipe
-* PyAutoGUI
+- Detects one hand from a webcam feed
+- Recognizes basic gestures for slide navigation
+- Works with Google Slides in a browser
+- Uses MediaPipe, OpenCV, and PyAutoGUI
+- Beginner-friendly for learning AI + computer vision
 
-to detect hand gestures and convert them into presentation controls like:
+## 🧠 Gesture Controls
 
-* Next Slide
-* Previous Slide
-* Start Presentation
-* Exit Presentation
+| Gesture | Action |
+| --- | --- |
+| Open palm | Next slide |
+| Three fingers | Previous slide |
+| Two fingers | Start slideshow |
+| Fist | Exit slideshow |
 
----
+## 🛠️ Technologies Used
 
-# 🚀 Features
+- Python
+- OpenCV
+- MediaPipe
+- PyAutoGUI
 
-✅ Control Google Slides using gestures
-✅ Real-time hand tracking using AI
-✅ Works directly from laptop webcam
-✅ No additional hardware required
-✅ Beginner-friendly AI + Computer Vision project
+## 📦 Installation
 
----
-
-# 🧠 Gesture Controls
-
-| Gesture          | Action          |
-| ---------------- | --------------- |
-| ✋ Open Palm      | Next Slide      |
-| 🤟 Three Fingers | Previous Slide  |
-| ✌️ Two Fingers   | Start Slideshow |
-| ✊ Fist           | Exit Slideshow  |
-
----
-
-# 🛠️ Technologies Used
-
-* Python
-* OpenCV
-* MediaPipe
-* PyAutoGUI
-
----
-
-# 📦 Installation
-
-## Step 0 - Ensure Python is installed
-
-For Linux and Mac system, please use `python3` instead of `python` in the commands below </br>
-
-Check if python is installed and available in your system PATH on VSCode Terminal (Terminal → New Terminal):
-```bash
-python -V
-```
-
----
-## Step 1 — Download the code from git repo
+### 1. Clone the repository
 
 ```bash
-https://github.com/dotsatya/Gesture-Control
+git clone https://github.com/dotsatya/Gesture-Control.git
+cd gesture-control
 ```
 
----
+### 2. Install dependencies
 
-## Step 2 — Install Dependencies
+On Windows:
 
 ```bash
-python -m pip install --break-system-packages -r requirements.txt
+py -m pip install -r requirements.txt
 ```
 
-## Step 3 — Download Hand Landmarker Model
+On macOS/Linux:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+### 3. Download the hand model
 
 ```bash
 python setup_models.py
 ```
 
----
+If you are on macOS or Linux, use `python3` instead of `python`.
 
-# ▶️ Run the App
+## ▶️ Run the App
 
 ```bash
 python main.py
 ```
 
----
+Press `q` in the webcam window to quit the app.
 
-# Close the application
+## 🎯 How to Use
 
-Press Ctrl+C in terminal to close the application
+1. Open Google Slides in your browser.
+2. Start the slideshow mode.
+3. Run the Python application.
+4. Place your hand in front of the webcam.
+5. Use the supported gestures to control the presentation.
 
----
+## 💻 System Notes
 
+- For macOS, allow Accessibility and Input Monitoring permissions for Terminal, VS Code, or your IDE so keyboard shortcuts can work.
+- The current implementation uses a Mac-style shortcut to start the slideshow. On Windows or Linux, you may need to adjust the shortcut in the code if it does not work as expected.
+- Good lighting and a clear camera view improve gesture detection.
 
-# 💻 macOS Permission Setup
-
-For keyboard control to work on macOS:
-
-Go to:
-
-System Settings → Privacy & Security
-
-Enable permissions for:
-
-* Accessibility
-* Input Monitoring
-
-Allow access for:
-
-* Terminal
-  OR
-* VS Code
-  OR
-* PyCharm
-
-Without these permissions, the app cannot control Google Slides.
-
----
-
-# 🎯 How to Use
-
-1. Open Google Slides in Chrome
-2. Start slideshow mode
-3. Run the Python application
-4. Show gestures in front of webcam
-5. Control slides hands-free
-
----
-
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```bash
 gesture-control/
-│
-├── .gitignore
 ├── main.py
 ├── README.md
 ├── requirements.txt
@@ -145,80 +91,22 @@ gesture-control/
     └── hand_landmarker.task
 ```
 
----
+## 🧩 How It Works
 
-# 📜 requirements.txt
+1. The webcam feed is captured with OpenCV.
+2. MediaPipe detects hand landmarks.
+3. The app counts visible fingers.
+4. Each gesture is mapped to a keyboard action.
+5. PyAutoGUI sends the corresponding key press to control Google Slides.
 
-```txt
-mediapipe==0.10.35
-opencv-python>=4.8.0
-pyautogui>=0.9.54
-```
+## 🔮 Possible Improvements
 
----
+- Swipe gestures
+- Laser pointer mode
+- Volume control
+- Multi-hand support
+- Custom gesture training
 
-# 🧩 How It Works
+## 👨‍💻 Built With AI + Computer Vision
 
-The application:
-
-1. Captures webcam feed using OpenCV
-2. Detects hand landmarks using MediaPipe
-3. Identifies finger positions
-4. Maps gestures to keyboard shortcuts
-5. Uses PyAutoGUI to control Google Slides
-
----
-
-# 🔮 Future Improvements
-
-* Swipe gesture recognition
-* Gesture-based laser pointer
-* Volume control
-* Zoom gestures
-* AI-powered custom gesture training
-* Multi-hand support
-
----
-
-# 🎓 Learning Outcomes
-
-This project helps students understand:
-
-* Computer Vision
-* AI-based gesture recognition
-* Human Computer Interaction (HCI)
-* Real-time webcam processing
-* Automation using Python
-
----
-
-# 📸 Demo Idea
-
-Use this project during:
-
-* AI Workshops
-* Hackathons
-* College Tech Fests
-* Computer Vision Sessions
-* Smart Classroom Demonstrations
-
----
-
-# ⚠️ Notes
-
-* Ensure good lighting conditions
-* Keep hand visible to webcam
-* Avoid cluttered backgrounds for better detection
-* Works best at moderate camera distance
-
----
-
-# Live MediaPipe 
-![MediaPipe Hand Tracking Demo](https://google-ai-edge.github.io/mediapipe-samples-web/#/vision/hand_landmarker)
-![Google AI Media Pipe] (https://ai.google.dev/edge/mediapipe/solutions/guide)
-
----
-
-# 👨‍💻 Built With AI + Computer Vision
-
-A futuristic interaction system powered by hand tracking and real-time gesture recognition.
+A simple hands-free interaction system powered by real-time gesture recognition.
