@@ -2,6 +2,24 @@
 
 Control Google Slides with hand gestures using your laptop camera. This project combines Computer Vision and AI to detect simple hand poses and trigger presentation actions in real time.
 
+## 🎯 Problem Statement
+
+This project enables users to control a computer or system using hand gestures captured from a webcam. The goal is to create a hands-free interaction experience for tasks such as navigating presentations or triggering actions without touching the keyboard or mouse.
+
+## 🔄 Workflow
+
+1. Capture
+   - Connect to the webcam and continuously capture the live video feed.
+   - Solution: OpenCV
+
+2. Detect
+   - Detect the user's hand in each video frame and recognize the corresponding gesture.
+   - Solution: MediaPipe Hand Landmarker (official web demo: https://google-ai-edge.github.io/mediapipe-samples-web/#/vision/hand_landmarker)
+
+3. Assign
+   - Map each recognized gesture to a predefined action and execute the corresponding system command.
+   - Solution: PyAutoGUI
+
 ## ✨ Features
 
 - Detects one hand from a webcam feed
